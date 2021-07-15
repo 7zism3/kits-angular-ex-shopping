@@ -1,0 +1,25 @@
+<div class="card text-white bg-danger mb-3 mt-3" style="max-width: 18rem;">
+  <div class="card-header text-center">Shopping Cart</div>
+  <div class="card-body">
+    <h5 class="card-title" *ng>Total: {{total | currency}}</h5>
+    <hr>
+    <h6 class="card-title">Items bought:</h6>
+
+    <ul>
+      <!--li *ngFor="let order of orders.productOrders">
+                {{ order.product.name }} - {{ order.quantity}} pcs.
+            </li-->
+
+      <div class="cart-item" *ngFor="let item of items">
+        <span>{{ item.name }} - </span>
+
+        <span>{{ item.price | currency }}</span>
+      </div>
+
+    </ul>
+
+    <button class="btn btn-light btn-block"> Checkout></button>
+
+  </div>
+</div>
+
