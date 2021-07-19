@@ -11,7 +11,8 @@ export class ProductsService {
     this.baseURL = this.baseURL + 'products';
   }
 
-  baseURL = 'https://60cd9e2591cc8e00178dbb09.mockapi.io/api/';
+  // baseURL = 'https://60cd9e2591cc8e00178dbb09.mockapi.io/api/';
+  baseURL = 'http://localhost:8200/api/';
   product: Product[] = [];
 
   public getProducts(): Observable<any> {
@@ -26,7 +27,7 @@ export class ProductsService {
     return this.http.post<any>(this.baseURL, product);
   }
 
-  public updateProducte(product: Product): Observable<any> {
+  public updateProduct(product: Product): Observable<any> {
     return this.http.put<any>(this.baseURL + `/${product.id}`, product);
   }
 

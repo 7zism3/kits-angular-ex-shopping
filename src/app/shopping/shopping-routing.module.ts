@@ -1,14 +1,16 @@
-// import { NgModule } from '@angular/core';
-// import { Routes, RouterModule } from '@angular/router';
-// import { ViewCartComponent } from './view-cart/view-cart.component';
+import { NgModule } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
+import { ShoppingComponent } from './shopping/shopping.component';
+import { ViewCartComponent } from './view-cart/view-cart.component';
 
-// const routes: Routes = [
-//   { path: '', redirectTo: 'shopping', pathMatch: 'full' },
-//   { path: 'viewCart', component: ViewCartComponent },
-// ];
+const routes: Routes = [
+  { path: '', redirectTo: 'shopping', pathMatch: 'full' },
+  { path: 'shopping', component: ShoppingComponent },
+  { path: 'viewCart', component: ViewCartComponent },
+];
 
-// @NgModule({
-//   imports: [RouterModule.forRoot(routes)],
-//   exports: [RouterModule],
-// })
-// export class Shopping-RoutingModule {}
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule],
+})
+export class ShoppingRoutingModule {}

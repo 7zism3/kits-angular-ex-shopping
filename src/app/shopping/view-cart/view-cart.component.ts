@@ -1,7 +1,7 @@
 import { Item } from './../../model/item';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { CartService } from 'src/app/server/cart.service';
+import { CartService } from '../../server/cart.service';
 
 @Component({
   selector: 'app-view-cart',
@@ -24,7 +24,7 @@ export class ViewCartComponent implements OnInit {
      this.cartService.deleteItem(item);
   }
 
-  updateQuantityItem(item: Item, newQuatity: number): void {
-    this.cartService.updateQuantityItem(item, newQuatity);
+  updateQuantityItem(item: Item, newQuatity: string): void {
+    this.cartService.updateQuantityItem(item, Number(newQuatity));
   }
 }

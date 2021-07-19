@@ -1,9 +1,9 @@
 <div class="mt-3 mb-3 text-white card bg-danger" style="max-width: 18rem;">
-  <div class="text-center card-header">Shopping Cart</div>
+  <div class="text-center card-header">GIỎ HÀNG</div>
   <div class="card-body">
-    <h5 class="card-title">Total: {{cart.total | currency}}</h5>
+    <h5 class="card-title">Tổng tiền: {{cart.total | currency}}</h5>
     <hr>
-    <h6 class="card-title">Items bought:</h6>
+    <h6 class="card-title">Các mặt hàng đã mua:</h6>
 
     <ul>
       <!--li *ngFor="let order of orders.productOrders">
@@ -11,16 +11,19 @@
             </li-->
 
       <div class="cart-item" *ngFor="let item of cart.items">
-        <span>{{ item.product.name }} - </span>
+        <span>"{{ item.product.name }}" - </span>
 
-        <span>{{ item.quantity }} psb</span>
+        <span>{{ item.quantity }} sản phẩm</span>
       </div>
 
     </ul>
 
-    <button class="btn btn-light btn-block" (click)=navigateToViewCart()>
-      View Cart
-      <!-- <a href="../view-cart/view-cart.component.html" routerLink="/viewCart">View Card</a> -->
+    <button class="btn btn-light btn-block" routerLink="/viewCart">
+      Xem chi tiết
+      <!--
+
+    <button class="btn btn-light btn-block"  (click)=navigateToViewCart()>
+        <a href="../view-cart/view-cart.component.html" routerLink="/viewCart">View Card</a> -->
     </button>
 
   </div>

@@ -1,22 +1,21 @@
-
-<div class="container-fluid">
+<div class="container-fluid col-sm-9">
 
   <div class="row">
     <div class="mt-2 col">
-      <h2 class="text-center">Your Cart</h2>
-      <table class="table p-2 table-bordered table-striped">
+      <h2 class="text-center">GIỎ HÀNG CỦA BẠN</h2>
+      <table class="table p-2 table-bordered table-striped col-sm-9">
         <thead>
-          <tr>
-            <th>Quantity</th>
-            <th>Product</th>
-            <th class="text-right">Price</th>
-            <th class="text-right">Subtotal</th>
+          <tr >
+            <th>Số lượng</th>
+            <th>Sản phẩm</th>
+            <th class="text-right">Đơn giá</th>
+            <th class="text-right">Thành tiền</th>
           </tr>
         </thead>
         <tbody>
           <tr *ngIf="cart.items.length == 0">
             <td colspan="4" class="text-center">
-              Your cart is empty
+              Giỏ hàng của bạn trống
             </td>
           </tr>
           <tr *ngFor="let item of cart.items">
@@ -33,14 +32,14 @@
             </td>
             <td class="text-center">
               <button class="btn btn-sm btn-danger" (click)="cart.deleteItem(item)">
-                Remove
+                Loại bỏ
               </button>
             </td>
           </tr>
         </tbody>
         <tfoot>
           <tr>
-            <td colspan="3" class="text-right">Total:</td>
+            <td colspan="3" class="text-right">Tổng tiền:</td>
             <td class="text-right">
               {{cart.total | currency:"USD":"symbol":"2.2-2"}}
             </td>
@@ -53,11 +52,12 @@
     <div class="col">
       <div class="text-center">
         <button class="m-1 btn btn-primary" (click)="navigateToShopping()">
-          Continue Shopping
+          Trở lại mua sắm
         </button>
         <button class="m-1 btn btn-secondary" routerLink="/shopping" [disabled]="cart.items.length == 0">
-          Checkout
+          Thanh toán
         </button>
       </div>
     </div>
   </div>
+</div>
