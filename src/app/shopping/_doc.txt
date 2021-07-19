@@ -1,0 +1,4 @@
+Tham khảo thêm:
+
+https://stackblitz.com/edit/angular-ivy-q4yrqt?file=src%2Fapp%2Fproduc%2Fproduc.component.ts
+

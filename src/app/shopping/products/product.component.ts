@@ -9,6 +9,7 @@ import { Product } from '../../model/product';
   styleUrls: ['./product.component.scss'],
 })
 export class ProductsComponent implements OnInit {
+
   products: Product[] = [];
 
   ngOnInit(): void {
@@ -33,10 +34,11 @@ export class ProductsComponent implements OnInit {
         console.log(err);
       }
     );
+    
   }
 
   addToCart(product: Product): void {
     this.cartService.addToCart(product);
-    window.alert('Đã thêm sản phẩm vào giỏ hàng');
+    // window.alert('Đã thêm sản phẩm vào giỏ hàng');
   }
 }

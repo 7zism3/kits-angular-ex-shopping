@@ -1,0 +1,63 @@
+
+<div class="container-fluid">
+
+  <div class="row">
+    <div class="mt-2 col">
+      <h2 class="text-center">Your Cart</h2>
+      <table class="table p-2 table-bordered table-striped">
+        <thead>
+          <tr>
+            <th>Quantity</th>
+            <th>Product</th>
+            <th class="text-right">Price</th>
+            <th class="text-right">Subtotal</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngIf="cart.items.length == 0">
+            <td colspan="4" class="text-center">
+              Your cart is empty
+            </td>
+          </tr>
+          <tr *ngFor="let item of cart.items">
+            <td>
+              <input type="number" class="form-control-sm" style="width:5em" min="0" #box [value]="item.quantity"
+                (change)="updateQuantityItem(item, box.value)" />
+            </td>
+            <td>{{item.product.name}}</td>
+            <td class="text-right">
+              {{item.product.price | currency:"USD":"symbol":"2.2-2"}}
+            </td>
+            <td class="text-right">
+              {{(item.itemTotal) | currency:"USD":"symbol":"2.2-2" }}
+            </td>
+            <td class="text-center">
+              <button class="btn btn-sm btn-danger" (click)="cart.deleteItem(item)">
+                Remove
+              </button>
+            </td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="3" class="text-right">Total:</td>
+            <td class="text-right">
+              {{cart.total | currency:"USD":"symbol":"2.2-2"}}
+            </td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <div class="text-center">
+        <button class="m-1 btn btn-primary" (click)="navigateToShopping()">
+          Continue Shopping
+        </button>
+        <button class="m-1 btn btn-secondary" routerLink="/shopping" [disabled]="cart.items.length == 0">
+          Checkout
+        </button>
+      </div>
+    </div>
+  </div>

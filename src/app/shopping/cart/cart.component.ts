@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CartService } from '../../server/cart.service';
+import { Cart } from '../../model/cart';
+import { Router, Routes } from '@angular/router';
 
 @Component({
   selector: 'app-cart',
@@ -7,10 +9,14 @@ import { CartService } from '../../server/cart.service';
   styleUrls: ['./cart.component.scss'],
 })
 export class CartComponent implements OnInit {
-  items = this.cartService.getItems();
-  total = this.cartService.getTotal();
+  cart: Cart = this.cartService.cart;
 
-  constructor(private cartService: CartService) {}
+  // tslint:disable-next-line: variable-name
+  constructor(private _router: Router, private cartService: CartService) {}
 
   ngOnInit(): void {}
+
+  navigateToViewCart(): void {
+    this._router.navigate(['viewCart']);
+  }
 }
