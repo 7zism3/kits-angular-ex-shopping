@@ -1,16 +1,18 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { ShoppingComponent } from './shopping/shopping.component';
-import { ViewCartComponent } from './view-cart/view-cart.component';
+import {ShoppingComponent} from './shopping/shopping.component';
+import {ViewCartComponent} from './view-cart/view-cart.component';
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
+
 
 const routes: Routes = [
-  { path: '', redirectTo: 'shopping', pathMatch: 'full' },
-  { path: 'shopping', component: ShoppingComponent },
-  { path: 'viewCart', component: ViewCartComponent },
+  { path: '', redirectTo: 'shopping1', pathMatch: 'full' },
+  { path: 'shopping', component:  ShoppingComponent},
+  { path: 'view-cart', component: ViewCartComponent },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule],
+  imports: [RouterModule.forChild(routes)],
+  exports: [RouterModule]
 })
-export class ShoppingRoutingModule {}
+export class ShoppingRoutingModule {
+}

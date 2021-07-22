@@ -8,7 +8,7 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
+      <ul class="navbar-nav" *ngIf="!checkLogin() ">
         <li class="nav-item">
           <a class="nav-link " aria-current="shopping" routerLink="/shopping">Trang chủ</a>
         </li>
@@ -22,9 +22,22 @@
           <a class="nav-link" routerLink="/shopping">Về chúng tôi</a>
         </li>
       </ul>
+
+      <ul class="navbar-nav" *ngIf="checkLogin()">
+        <li class="nav-item">
+          <a class="nav-link " aria-current="shopping" routerLink="/shopping">Trang chủ</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/admin/products">Products</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/admin/orders">Orders</a>
+        </li>
+      </ul>
+
     </div>
     <div class="topnav-right">
-      <ul class="navbar-nav">
+      <ul class="navbar-nav" *ngIf="!checkLogin()">
         <li class="nav-item">
           <a class="nav-link" routerLink="/login">Login</a>
         </li>
@@ -32,6 +45,13 @@
           <a class="nav-link" routerLink="/signup">Signup</a>
         </li>
       </ul>
+
+      <ul class="navbar-nav" *ngIf="checkLogin()">
+        <li class="nav-item">
+          <a class="nav-link" (click)="logout()">Logout</a>
+        </li>
+      </ul>
+
     </div>
   </div>
 

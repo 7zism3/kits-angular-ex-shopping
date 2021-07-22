@@ -3,11 +3,10 @@ import { CommonModule } from '@angular/common';
 import { ShoppingComponent } from './shopping/shopping.component';
 import { ProductsComponent } from './products/product.component';
 import { CartComponent } from './cart/cart.component';
-// import { BrowserModule } from '@angular/platform-browser';
 import { ViewCartComponent } from './view-cart/view-cart.component';
-import { RouterModule, Routes } from '@angular/router';
-import { ShoppingRoutingModule } from './shopping-routing.module';
-import { FormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {ShoppingRoutingModule} from './shopping-routing.module';
+import {BrowserModule} from '@angular/platform-browser';
 
 
 @NgModule({
@@ -17,6 +16,6 @@ import { FormsModule } from '@angular/forms';
     CartComponent,
     ViewCartComponent,
   ],
-  imports: [CommonModule, ShoppingRoutingModule, FormsModule],
+  imports: [CommonModule, ShoppingRoutingModule, BrowserModule, FormsModule, ReactiveFormsModule ],
 })
 export class ShoppingModule {}
